@@ -33,6 +33,7 @@ public:
                 *current = new Node(node->data);
                 current = &((*current)->next);
                 list_size++;
+                
             }
         }
         return *this;
