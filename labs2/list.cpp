@@ -45,6 +45,7 @@ public:
     }
 
     subforwardlist& operator=(subforwardlist&& other) noexcept {
+        // Комментарий, аналогичный вектору
         if (this != &other) {
             clear();
             begin = other.begin;
@@ -55,6 +56,8 @@ public:
         return *this;
     }
 
+
+// Здесь и далее неявно используется код, который ищет указатель на ноду по индексу, это можно было вынести в отдельный метод и переиспользовать везд
     void push_back(const T& data) {
         Node* new_node = new Node(data);
         if (!begin) {
