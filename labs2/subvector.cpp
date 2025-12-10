@@ -19,6 +19,7 @@ public:
     }
 
     subvector& operator=(const subvector& other) {
+        // стандартный комментарий про copy&swap (см общий комментарий по лабам в беседе)
         if (this != &other) {
             delete[] mas;
             top = other.top;
@@ -38,6 +39,7 @@ public:
     }
 
     subvector& operator=(subvector&& other) noexcept {
+           // Тут правильнее не удалять себя (это долго), а отдать свое состояние внутрь other, так как это move операция, то такое поведение корректно
         if (this != &other) {
             delete[] mas;
             mas = other.mas;
